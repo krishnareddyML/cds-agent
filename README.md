@@ -1,10 +1,10 @@
-# cdss-agent
+# CDS-Agent
 ## Overview
 
-The `cdss-agent` project is designed to check Clinical Decision Support System (CDSS) rules sent by the EHR project against given patient data. This is achieved using the PydantAI Agent framework and local or external LLM (Large Language Model) models. The primary goal is to evaluate user free text queries and verify them using LLM Agents without the need to write any programmatic rules.
+The `cds-agent` project is designed to check Clinical Decision Support System (CDSS) rules sent by the EHR project against given patient data. This is achieved using the PydantAI Agent framework and local or external LLM (Large Language Model) models. The primary goal is to evaluate user free text queries and verify them using LLM Agents without the need to write any programmatic rules.
 
 ## Installation
-To install the `cdss-agent`, follow these steps:
+To install the `cds-agent`, follow these steps:
 
 1. Clone the repository:
     ```sh
@@ -40,9 +40,11 @@ To install the `cdss-agent`, follow these steps:
 
 To use the `cdss-agent`, run the following command:
 
+```sh
 uvicorn app.main:app --host=localhost --port=8001 --reload
-
+```
 ## From Postman call API
+```sh
 curl --location 'http://localhost:8003/cdsagent/run' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -50,7 +52,7 @@ curl --location 'http://localhost:8003/cdsagent/run' \
   "cdssQuery": "is patient WBC > 10 and age >40",
   "modelName": "DiagnosticModelV1"
 }'
-
+```
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
