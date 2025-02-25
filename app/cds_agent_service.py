@@ -16,16 +16,16 @@ from app.cds_agent_models import CdsAgentInput, CdsAgentOutput, Deps, PatientVit
 
 class CdsAgentService:
 
-    falcon_base_url = os.getenv('EMR_BASE_URL', 'https://api.falcon.com/v1')
+    falcon_base_url = os.getenv('EMR_BASE_URL', 'https://api.emr.com/v1')
 
     #configure logfire
     logfire.configure(token=os.getenv('LOGFIRE_CDSS_AGENT_TOKEN'))
     logfire.instrument_openai()
     
     model = OpenAIModel(
-        model_name='mistral:latest', #mistral-small:22b-instruct-2409-q2_K, mistral:latest
-        base_url=os.getenv('BASE_URL', 'http://192.168.20.95:11434/v1'),
-        api_key=os.getenv('API_KEY', 'OLLAMA_LOCAL')        
+        model_name=os.getenv('DEFAULT_MODEL_NAME', 'mistral:latest'),
+        base_url=os.getenv('OLLAMA_BASE_URL', 'http://localhost:11434/v1'),
+        api_key=os.getenv('OLLAMA_API_KEY', 'OLLAMA_LOCAL')        
     )
 
     #model = OpenAIModel("gpt-4o-mini")
