@@ -41,7 +41,7 @@ To install the `cds-agent`, follow these steps:
 To use the `cdss-agent`, run the following command:
 
 ```sh
-uvicorn app.main:app --host=localhost --port=8001 --reload
+uvicorn app.main:app --host=localhost --port=8003 --reload
 ```
 ## From Postman call API
 ```sh
