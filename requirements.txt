@@ -1,0 +1,7 @@
+pydantic-ai
+logfire
+devtools
+fastapi
+uvicorn[standard]
+python-dotenv
+langfuse
